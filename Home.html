@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your eBook Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;        
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .welcome {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://source.unsplash.com/random/1920x1080/?books');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .welcome::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .welcome-content {
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .welcome p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .varieties {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+
+        .varieties h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            text-align: center;
+            margin: 1rem;
+            transition: transform 0.3s ease;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .category:hover {
+            transform: translateY(-10px);
+        }
+
+        .category i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .category:nth-child(1) {
+            background-color: #e74c3c;
+        }
+
+        .category:nth-child(2) {
+            background-color: #3498db;
+        }
+
+        .category:nth-child(3) {
+            background-color: #9b59b6;
+        }
+
+        .category:nth-child(4) {
+            background-color: #f39c12;
+        }
+
+        .features {
+            padding: 5rem 0;
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+        }
+
+        .feature i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .copyright {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .welcome h1 {
+                font-size: 2rem;
+            }
+
+            .welcome p {
+                font-size: 1rem;
+            }
+
+            .varieties h2,
+            .features h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="welcome">
+        <div class="welcome-content fade-in">
+            <h1>Welcome to Your eBook Website</h1>
+            <p>Discover a world of knowledge, stories, and adventures.</p>
+            <a href="Books.html" class="btn">Explore Now</a>
+        </div>
+    </section>
+
+    <section class="varieties">
+        <div class="container">
+            <h2>Explore Endless Categories</h2>
+            <div class="categories">
+                <div class="category">
+                    <i class="fas fa-book"></i>
+                    <p>Fiction</p>
+                </div>
+                <div class="category">
+                    <i class="fas fa-graduation-cap"></i>
+                    <p>Non-Fiction</p>
+                </div>
+                <div class="category">
+                    <i class="fas fa-heart"></i>
+                    <p>Romance</p>
+                </div>
+                <div class="category">
+                    <i class="fas fa-magnifying-glass"></i>
+                    <p>Mystery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <i class="fas fa-unlock"></i>
+                    <h3>Free Access</h3>
+                    <p>Enjoy free access to thousands of eBooks anytime, anywhere.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Nearby Bookstores</h3>
+                    <p>Find physical copies in bookstores near you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="copyright">
+        <div class="container">
+            <p>&copy; 2025 Your eBook Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

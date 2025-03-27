@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature's Bookshelf - eBook Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d') center/cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .search-bar {
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            width: 250px;
+            font-size: 1rem;
+        }
+
+        .filter, .login-btn {
+            padding: 0.8rem;
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 0.8rem 1.5rem;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem 5%;
+        }
+
+        .book-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .book-info {
+            padding: 1.5rem;
+        }
+
+        .book-title {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .book-author {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .book-price {
+            display: inline-block;
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding-right: 83px;
+        }
+        .add-to-cart {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cart-icon {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: green;
+            padding: 1rem;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .cart-icon p {
+            font-size: 40px;
+        }
+        button a p{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Nature's Bookshelf</div>
+        <div class="nav-items">
+            <input type="text" class="search-bar" placeholder="Search books...">
+            <select class="filter">
+                <option>All Genres</option>
+                <option>Fiction</option>
+                <option>Non-Fiction</option>
+                <option>Science</option>
+            </select>
+            <button class="login-btn"><a href="login.html"><p>Login / Sign Up</p></a></button>
+        </div>
+    </nav>
+
+    <div class="book-grid">
+        <div class="book-card">
+            <img src="SilentTrees.jpg" class="book-img">
+            <div class="book-info">
+                <h3 class="book-title">The Silent Forest</h3>
+                <p class="book-author">Jane Greenleaf</p>
+                <p class="book-price">$14.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="book-card">
+            <img src="MountainEchoes.jpg" class="book-img">
+            <div class="book-info">
+                <h3 class="book-title">Mountain Echoes</h3>
+                <p class="book-author">Robert Highpeak</p>
+                <p class="book-price">$19.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="book-card"><img src="MysticRiver.jpg" class="book-img"><div class="book-info"><h3 class="book-title">Mystic River</h3><p class="book-author">John Doe</p><p class="book-price">$12.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+        <div class="book-card"><img src="Ocean'sWhisper.jpg" class="book-img"><div class="book-info"><h3 class="book-title">Ocean's Whisper</h3><p class="book-author">Emily Wave</p><p class="book-price">$17.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+        <div class="book-card"><img src="EncahntedWoods.jpg" class="book-img"><div class="book-info"><h3 class="book-title">The Enchanted Woods</h3><p class="book-author">Lillain Harper</p><p class="book-price">$12.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+        <div class="book-card"><img src="The WonderOfSpace.jpg" class="book-img"><div class="book-info"><h3 class="book-title">The Wonders of Space</h3><p class="book-author">Samuel Bright</p><p class="book-price">$17.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+        <div class="book-card"><img src="MasteringMathematics.jpg" class="book-img"><div class="book-info"><h3 class="book-title">Mastering Mathematics</h3><p class="book-author">Anna Whitman</p><p class="book-price">$12.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+        <div class="book-card"><img src="TheForgottenLetter.jpg" class="book-img"><div class="book-info"><h3 class="book-title">The Forgotten Letter</h3><p class="book-author">Jonathan Hale</p><p class="book-price">$17.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+        <div class="book-card"><img src="Dancing in te rain.jpg" class="book-img"><div class="book-info"><h3 class="book-title">Dancing in the Rain</h3><p class="book-author">Sophie Reynolds</p><p class="book-price">$12.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+        <div class="book-card"><img src="The tears of the sunset.jpg" class="book-img"><div class="book-info"><h3 class="book-title">The Tears of the Sunset</h3><p class="book-author">Evelyn Carter</p><p class="book-price">$17.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+        <div class="book-card"><img src="NebualsEdge.jpg" class="book-img"><div class="book-info"><h3 class="book-title">Nebula's Edge</h3><p class="book-author">Orion Vance</p><p class="book-price">$12.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+        <div class="book-card"><img src="ChronoShift.jpg" class="book-img"><div class="book-info"><h3 class="book-title">Chrono Shift</h3><p class="book-author">Helena Frost</p><p class="book-price">$17.99</p><button class="add-to-cart">Add to Cart</button></div></div>
+    </div>
+    <div class="cart-icon">
+        <p>&#x1F6D2;</p>
+    </div>
+</body>
+</html>
